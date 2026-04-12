@@ -2,12 +2,13 @@ let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
 
 const ALTURA_SUELO=40;
-const ALTURA_PERSONAJE=75;
-const ANCHO_PERSONAJE=50;
-const ALTURA_LIMON=15;
-const ANCHO_LIMON=15;
+const ALTURA_PERSONAJE=80;
+const ANCHO_PERSONAJE=60;
+const ALTURA_LIMON=20;
+const ANCHO_LIMON=20;
 
-let perosnajeX=canvas.width/2;
+let personajeX=canvas.width/2-(ANCHO_PERSONAJE/2);
+let personajeY=canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE);
 let limonX=0;
 let limonY=0;
 
@@ -18,7 +19,7 @@ function dibujarSuelo(){
 
 function dibujarPersonaje(){
     ctx.fillStyle="red";
-    ctx.fillRect(perosnajeX-(ANCHO_PERSONAJE/2),canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE),ANCHO_PERSONAJE,ALTURA_PERSONAJE);
+    ctx.fillRect(personajeX,personajeY,ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
 
 function dibujar(){
@@ -28,13 +29,15 @@ function dibujar(){
 }
 
 function moverIzquierda(){
-    perosnajeX=perosnajeX-10;
+    personajeX=personajeX-10;
     actualizarPantalla();
+    detectarEncuentro();
 }
 
 function moverDerecha(){
-    perosnajeX=perosnajeX+10;
+    personajeX=personajeX+10;
     actualizarPantalla();
+    detectarEncuentro();
 }
 
 function actualizarPantalla(){
@@ -56,4 +59,10 @@ function dibuajrLimon(){
 function moverLimon(){
     limonY=limonY+10;
     actualizarPantalla();
+    detectarEncuentro();
 }
+
+function detectarEncuentro(){
+    if(limonX+ANCHO_LIMON>=personajeX && limonX<=personajeX+ANCHO_PERSONAJE && limonY+ALTURA_LIMON>personajeY && limonY<personajeY+ALTURA_PERSONAJE){
+        alert("ATRAPADO!!")}
+    }
