@@ -25,7 +25,7 @@ function dibujarPersonaje(){
 function dibujar(){
     dibujarPersonaje();
     dibujarSuelo();
-    dibuajrLimon();
+    aparecerLimon();
 }
 
 function moverIzquierda(){
@@ -64,5 +64,17 @@ function moverLimon(){
 
 function detectarEncuentro(){
     if(limonX+ANCHO_LIMON>=personajeX && limonX<=personajeX+ANCHO_PERSONAJE && limonY+ALTURA_LIMON>personajeY && limonY<personajeY+ALTURA_PERSONAJE){
-        alert("ATRAPADO!!")}
-    }
+        //alert("ATRAPADO!!") 
+        aparecerLimon();}
+}
+
+function probarAleatorio(){
+    let aleatorio=generarAleratorio(0,600);
+    return console.log(aleatorio);
+}
+
+function aparecerLimon(){
+    limonX=generarAleratorio(0,canvas.width-ANCHO_LIMON);
+    limonY=0;
+    actualizarPantalla();
+}
