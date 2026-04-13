@@ -13,6 +13,7 @@ let limonX=0;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
+let velocidadCaida=200;
 
 function dibujarSuelo(){
     ctx.fillStyle="green";
@@ -25,6 +26,7 @@ function dibujarPersonaje(){
 }
 
 function dibujar(){
+    setInterval(moverLimon,velocidadCaida);
     dibujarPersonaje();
     dibujarSuelo();
     aparecerLimon();
@@ -67,10 +69,15 @@ function moverLimon(){
 
 function detectarEncuentro(){
     if(limonX+ANCHO_LIMON>=personajeX && limonX<=personajeX+ANCHO_PERSONAJE && limonY+ALTURA_LIMON>personajeY && limonY<personajeY+ALTURA_PERSONAJE){
-        //alert("ATRAPADO!!") 
         aparecerLimon();
         puntaje=puntaje+1;
         mostrarEnSpan("txtPuntaje",puntaje);
+    }if(puntaje==3){
+        velocidadCaida=150;
+    }if(puntaje==6){
+        velocidadCaida=100
+    }if(puntaje==10){
+        alert("Vendelos y te compras una coca")
     }
 }
 
@@ -79,6 +86,8 @@ function detectarPiso(){
         aparecerLimon();
         vidas=vidas-1
         mostrarEnSpan("txtVidas",vidas);
+    }if(vidas<=0){
+        alert("GAME OVER!!");
     }
 }
 
@@ -86,4 +95,8 @@ function aparecerLimon(){
     limonX=generarAleratorio(0,canvas.width-ANCHO_LIMON);
     limonY=0;
     actualizarPantalla();
+}
+
+function reiniciar(){
+
 }
