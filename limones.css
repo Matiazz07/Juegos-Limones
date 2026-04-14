@@ -5,35 +5,40 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* Fondo amarillo pastel con un patrón de puntos suaves */
-  background-color: #fefce8; 
-  background-image: radial-gradient(#fef08a 2px, transparent 2px);
-  background-size: 30px 30px;
-  font-family: 'Nunito', sans-serif;
   margin: 0;
   padding: 20px;
-  color: #166534; /* Texto verde oscuro */
+  font-family: 'Nunito', sans-serif;
+  color: #166534;
+  background-image: url('backgroundLimones.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
 }
 
-.contenedor.game-container {
-  background: #fef9c3; /* Contenedor en un amarillo un poco más sólido */
+.game-container.contenedor {
+  /* Hacemos el fondo un poco más opaco para que se lea bien el texto */
+  background: rgba(254, 249, 195, 0.9); 
   padding: 30px;
-  border: 4px solid #84cc16; /* Borde verde lima */
+  border: 4px solid #84cc16; 
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(132, 204, 22, 0.2);
   text-align: center;
   max-width: 800px;
   width: 100%;
   box-sizing: border-box;
+  /* Efecto de desenfoque al fondo para un toque moderno */
+  backdrop-filter: blur(5px); 
 }
 
+/* El resto del código CSS se mantiene igual... */
 header h1 {
   font-family: 'Press Start 2P', cursive;
   color: #15803d;
   font-size: 22px;
   margin-top: 0;
   margin-bottom: 10px;
-  text-shadow: 3px 3px 0px #a3e635; /* Sombra estilo retro */
+  text-shadow: 3px 3px 0px #a3e635;
 }
 
 .subtitulo {
@@ -50,7 +55,6 @@ header h1 {
   letter-spacing: 1px;
 }
 
-/* Panel de Puntuación y Vidas */
 .panel {
   display: flex;
   justify-content: space-around;
@@ -66,10 +70,9 @@ header h1 {
 }
 
 .valor {
-  color: #eab308; /* Números en color oro/limón oscuro */
+  color: #eab308;
 }
 
-/* Canvas */
 .canvas-wrapper {
   position: relative;
   display: inline-block;
@@ -83,10 +86,9 @@ canvas {
   box-shadow: 0 5px 15px rgba(101, 163, 13, 0.15);
   display: block;
   margin: 0 auto;
-  max-width: 100%; /* Evita que el canvas se desborde en pantallas pequeñas */
+  max-width: 100%; 
 }
 
-/* Controles de Movimiento */
 .controles-accion {
   margin-top: 25px;
   display: flex;
@@ -98,10 +100,10 @@ canvas {
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
   padding: 15px 25px;
-  background: #a3e635; /* Verde lima brillante */
+  background: #a3e635;
   color: #14532d;
   border: 3px solid #65a30d;
-  border-bottom: 7px solid #4d7c0f; /* Efecto de botón 3D mecánico */
+  border-bottom: 7px solid #4d7c0f;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.1s;
@@ -109,10 +111,9 @@ canvas {
 
 .btn-dir:active {
   border-bottom: 3px solid #4d7c0f;
-  transform: translateY(4px); /* El botón baja al presionarlo */
+  transform: translateY(4px);
 }
 
-/* Botón de Reinicio Especial */
 .menu-acciones {
   margin-top: 30px;
 }
@@ -124,7 +125,7 @@ canvas {
   background: linear-gradient(180deg, #fde047 0%, #eab308 100%);
   color: #422006;
   border: none;
-  border-radius: 25px; /* Forma de píldora */
+  border-radius: 25px;
   padding: 12px 30px;
   cursor: pointer;
   box-shadow: 0 6px 0 #ca8a04, 0 10px 10px rgba(202, 138, 4, 0.3);
@@ -138,6 +139,6 @@ canvas {
 }
 
 .btn-reiniciar:active {
-  transform: translateY(6px); /* El botón baja suavemente al presionarlo */
+  transform: translateY(6px);
   box-shadow: 0 0px 0 #ca8a04, 0 2px 5px rgba(202, 138, 4, 0.3);
 }
