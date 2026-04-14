@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caza Limones</title>
   <link rel="stylesheet" href="limones.css"/>
   <script src="utils.js"></script>
 </head>
 <body onload="dibujar();">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2>Autor: Matias Villota</h2>
-    <canvas id="areaJuego" width="600" height="400"></canvas>
+  
+  <div class="contenedor game-container">
+    <header>
+      <h1>Atrapar Limones</h1>
+      <p class="subtitulo">Si del cielo te caen limones...</p>
+      <p class="autor">Autor: Matias Villota</p>
+    </header>
+
     <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
+      <div class="marcador">
+        <span>Puntaje: <span id="txtPuntaje" class="valor">0</span></span>
+      </div>
+      <div class="marcador">
+        <span>Vidas: <span id="txtVidas" class="valor">3</span></span>
+      </div>
     </div>
-    <div class="botones">
-      <button onclick="moverIzquierda();">Izquierda</button>
-      <button onclick="moverDerecha();">Derecha</button>
-      <button onclick="reiniciar();">Reiniciar</button>
+
+    <div class="canvas-wrapper">
+      <canvas id="areaJuego" width="600" height="400"></canvas>
+    </div>
+
+    <div class="controles-accion">
+      <button class="btn-dir" onclick="moverIzquierda();">⬅ IZQ</button>
+      <button class="btn-dir" onclick="moverDerecha();">DER ➡</button>
+    </div>
+
+    <div class="menu-acciones">
+      <button class="btn-reiniciar" onclick="reiniciar();">REINICIAR PARTIDA</button>
     </div>
   </div>
+
   <script src="limones.js"></script>
 </body>
 </html>

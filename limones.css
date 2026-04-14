@@ -1,31 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@700;900&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Fondo amarillo pastel con un patrón de puntos suaves */
+  background-color: #fefce8; 
+  background-image: radial-gradient(#fef08a 2px, transparent 2px);
+  background-size: 30px 30px;
+  font-family: 'Nunito', sans-serif;
   margin: 0;
   padding: 20px;
+  color: #166534; /* Texto verde oscuro */
 }
 
-.contenedor {
+.contenedor.game-container {
+  background: #fef9c3; /* Contenedor en un amarillo un poco más sólido */
+  padding: 30px;
+  border: 4px solid #84cc16; /* Borde verde lima */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(132, 204, 22, 0.2);
+  text-align: center;
   max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: #15803d;
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 0px #a3e635; /* Sombra estilo retro */
+}
+
+.subtitulo {
+  font-weight: 900;
+  font-size: 16px;
+  color: #4d7c0f;
+  margin: 0 0 5px 0;
+}
+
+.autor {
+  color: #65a30d;
+  font-size: 12px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Panel de Puntuación y Vidas */
+.panel {
+  display: flex;
+  justify-content: space-around;
+  background: #f7fee7;
+  padding: 15px;
+  border: 3px solid #84cc16;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: #166534;
+  box-shadow: inset 0 3px 0 rgba(0,0,0,0.05);
+}
+
+.valor {
+  color: #eab308; /* Números en color oro/limón oscuro */
+}
+
+/* Canvas */
+.canvas-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
 }
 
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
+  background: #ffffff;
+  border: 4px solid #84cc16;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(101, 163, 13, 0.15);
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
+  max-width: 100%; /* Evita que el canvas se desborde en pantallas pequeñas */
 }
 
-.panel {
-  margin: 20px 0;
+/* Controles de Movimiento */
+.controles-accion {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.botones button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 16px;
+.btn-dir {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  padding: 15px 25px;
+  background: #a3e635; /* Verde lima brillante */
+  color: #14532d;
+  border: 3px solid #65a30d;
+  border-bottom: 7px solid #4d7c0f; /* Efecto de botón 3D mecánico */
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.1s;
+}
+
+.btn-dir:active {
+  border-bottom: 3px solid #4d7c0f;
+  transform: translateY(4px); /* El botón baja al presionarlo */
+}
+
+/* Botón de Reinicio Especial */
+.menu-acciones {
+  margin-top: 30px;
+}
+
+.btn-reiniciar {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  background: linear-gradient(180deg, #fde047 0%, #eab308 100%);
+  color: #422006;
+  border: none;
+  border-radius: 25px; /* Forma de píldora */
+  padding: 12px 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #ca8a04, 0 10px 10px rgba(202, 138, 4, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.1s ease;
+}
+
+.btn-reiniciar:hover {
+  background: linear-gradient(180deg, #fef08a 0%, #fde047 100%);
+}
+
+.btn-reiniciar:active {
+  transform: translateY(6px); /* El botón baja suavemente al presionarlo */
+  box-shadow: 0 0px 0 #ca8a04, 0 2px 5px rgba(202, 138, 4, 0.3);
 }

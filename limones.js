@@ -57,7 +57,7 @@ function limpiarCanvas(){
 }
 
 function dibuajrLimon(){
-    ctx.fillStyle="yellow";
+    ctx.fillStyle="#91CC1D";
     ctx.fillRect(limonX,limonY,ALTURA_LIMON,ANCHO_LIMON);
 }
 
