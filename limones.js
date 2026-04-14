@@ -14,6 +14,7 @@ let limonY=0;
 let puntaje=0;
 let vidas=3;
 let velocidadCaida=200;
+let intervalo;
 
 function dibujarSuelo(){
     ctx.fillStyle="green";
@@ -26,7 +27,7 @@ function dibujarPersonaje(){
 }
 
 function dibujar(){
-    setInterval(moverLimon,velocidadCaida);
+    intervalo=setInterval(moverLimon,velocidadCaida);
     dibujarPersonaje();
     dibujarSuelo();
     aparecerLimon();
@@ -52,7 +53,7 @@ function actualizarPantalla(){
 }
 
 function limpiarCanvas(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.clearRect(0,0,canvas.width,canvas.height);      
 }
 
 function dibuajrLimon(){
@@ -77,7 +78,8 @@ function detectarEncuentro(){
     }if(puntaje==6){
         velocidadCaida=100
     }if(puntaje==10){
-        alert("Vendelos y te compras una coca")
+        alert("Vendelos y te compras una coca");
+        clearInterval(intervalo);
     }
 }
 
@@ -88,6 +90,7 @@ function detectarPiso(){
         mostrarEnSpan("txtVidas",vidas);
     }if(vidas<=0){
         alert("GAME OVER!!");
+        clearInterval(intervalo);
     }
 }
 
