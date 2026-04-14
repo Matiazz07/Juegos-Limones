@@ -101,5 +101,14 @@ function aparecerLimon(){
 }
 
 function reiniciar(){
-
+    clearInterval(intervalo);
+    puntaje = 0;
+    vidas = 3;
+    personajeX = canvas.width / 2 - (ANCHO_PERSONAJE / 2);
+    personajeY = canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE);
+    mostrarEnSpan("txtPuntaje", puntaje);
+    mostrarEnSpan("txtVidas", vidas);
+    aparecerLimon();
+    actualizarPantalla();
+    intervalo = setInterval(moverLimon,velocidadCaida);
 }
