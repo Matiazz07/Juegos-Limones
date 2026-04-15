@@ -9,7 +9,7 @@ body {
   padding: 20px;
   font-family: 'Nunito', sans-serif;
   color: #166534;
-  background-image: url('backgroundLimones.png'); 
+  background-image: url('backgroundCazando.gif'); 
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -18,13 +18,13 @@ body {
 
 .game-container.contenedor {
   /* Hacemos el fondo un poco más opaco para que se lea bien el texto */
-  background: rgba(254, 249, 195, 0.9); 
+  background: rgba(255, 0, 0, 0.9); 
   padding: 30px;
   border: 4px solid #84cc16; 
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(132, 204, 22, 0.2);
   text-align: center;
-  max-width: 800px;
+  max-width: 1500px;
   width: 100%;
   box-sizing: border-box;
   /* Efecto de desenfoque al fondo para un toque moderno */
@@ -34,17 +34,17 @@ body {
 /* El resto del código CSS se mantiene igual... */
 header h1 {
   font-family: 'Press Start 2P', cursive;
-  color: #15803d;
-  font-size: 22px;
+  color: #aa00ff;
+  font-size: 55px;
   margin-top: 0;
   margin-bottom: 10px;
-  text-shadow: 3px 3px 0px #a3e635;
+  text-shadow: 3px 3px 0px #ffffff;
 }
 
 .subtitulo {
   font-weight: 900;
-  font-size: 16px;
-  color: #4d7c0f;
+  font-size: 25px;
+  color: #0800ff;
   margin: 0 0 5px 0;
 }
 
@@ -90,7 +90,8 @@ canvas {
 }
 
 .controles-accion {
-  margin-top: 25px;
+  margin-top: 150px;
+  margin-bottom: 150px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -100,10 +101,10 @@ canvas {
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
   padding: 15px 25px;
-  background: #a3e635;
-  color: #14532d;
-  border: 3px solid #65a30d;
-  border-bottom: 7px solid #4d7c0f;
+  background: #730096;
+  color: #ffffff;
+  border: 3px solid #ff00f2;
+  border-bottom: 7px solid #0c0052;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.1s;
@@ -116,6 +117,7 @@ canvas {
 
 .menu-acciones {
   margin-top: 30px;
+  margin-left: 1000px;
 }
 
 .btn-reiniciar {
@@ -125,8 +127,8 @@ canvas {
   background: linear-gradient(180deg, #fde047 0%, #eab308 100%);
   color: #422006;
   border: none;
-  border-radius: 25px;
-  padding: 12px 30px;
+  border-radius: 0px;
+  padding: 50px 30px;
   cursor: pointer;
   box-shadow: 0 6px 0 #ca8a04, 0 10px 10px rgba(202, 138, 4, 0.3);
   text-transform: uppercase;
