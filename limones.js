@@ -13,7 +13,7 @@ let limonX=0;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
-let velocidadCaida=200;
+let velocidadCaida=50;
 let intervalo;
 
 function dibujarSuelo(){
@@ -34,13 +34,13 @@ function dibujar(){
 }
 
 function moverIzquierda(){
-    personajeX=personajeX-10;
+    personajeX=0;
     actualizarPantalla();
     detectarEncuentro();
 }
 
 function moverDerecha(){
-    personajeX=personajeX+10;
+    personajeX=canvas.width-(ANCHO_PERSONAJE);
     actualizarPantalla();
     detectarEncuentro();
 }
